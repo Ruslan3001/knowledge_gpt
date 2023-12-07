@@ -88,6 +88,21 @@ def sidebar():
             help="Мальное количество токенов для генерации ответов"  # noqa: E501
         )  
 
+        #repetition_penalty :
+        par_rep_penal_input = st.text_input(
+            "repetition_penalty",
+            type="default",
+            placeholder="Значения ????",
+            disabled=False,
+            label_visibility="visible",
+            value="1.0",
+            help="Количество повторений слов"  # noqa: E501
+        )  
+        st.markdown(
+            "Количество повторений слов: Значение 1.0 — ничего не менять (нейтральное значение),\n"
+            "от 0 до 1 — повторять уже сказанные слова, \n"
+            "от 1 и далее стараться не использовать сказанные слова.\n"
+        )
         
         st.markdown("[Описание API GigaChat](https://developers.sber.ru/docs/ru/gigachat/api/reference)")    
         
