@@ -36,11 +36,11 @@ def sidebar():
             placeholder="Значения от 0 до 2",
             disabled=False,
             label_visibility="visible",
-            value=1,
+            #value=1,
             help="Более высокое значение делает вывод более случайным"  # noqa: E501
         )   
       
-        St.markdown("[Описание API GigaChat](https://developers.sber.ru/docs/ru/gigachat/api/reference)")    
+        st.markdown("[Описание API GigaChat](https://developers.sber.ru/docs/ru/gigachat/api/reference)")    
         
         st.markdown("---")
         st.markdown("# О программе")
