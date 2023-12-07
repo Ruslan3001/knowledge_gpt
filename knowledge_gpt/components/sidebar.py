@@ -39,7 +39,10 @@ def sidebar():
             placeholder="Значения от 0 до 2",
             disabled=False,
             label_visibility="visible",
-            help="Температура выборки, значения от 0 до 2. Более высокие значения, такие как 1.8,\n  jfffc \n jbh \n"  # noqa: E501
+            value=1,
+            help="""Температура выборки,
+            значения от 0 до 2. Более
+            высокие значения, такие как 1.8,\n  jfffc \n jbh \n"""  # noqa: E501
         )
         
         st.markdown(
