@@ -62,7 +62,31 @@ def sidebar():
             "Не рекомендуется использовать совместно с параметром temperature.\n"
         )
 
+        #n :
+        par_n_input = st.text_input(
+            "N-число вариантов ответов",
+            type="default",
+            placeholder="Значения от 1 до 4",
+            disabled=False,
+            label_visibility="visible",
+            value="1",
+            help="Значения от 1 до 4"  # noqa: E501
+        )   
+        st.markdown(
+            "Число вариантов ответов модели, которые необходимо сгенерировать \n"
+            "для каждого входного сообщения. Максимально возможное значение n=4.\n"
+        )
 
+        #max_tokens :
+        par_max_tokens_input = st.text_input(
+            "max_tokens",
+            type="default",
+            placeholder="Значения ????",
+            disabled=False,
+            label_visibility="visible",
+            value="1",
+            help="Мальное количество токенов для генерации ответов"  # noqa: E501
+        )  
 
         
         st.markdown("[Описание API GigaChat](https://developers.sber.ru/docs/ru/gigachat/api/reference)")    
