@@ -29,7 +29,15 @@ def sidebar():
         
         # Орисание st.text_input: https://docs.streamlit.io/library/api-reference/widgets/st.text_input  
         # temperature:
-   
+        par_temperature_input = st.text_input(
+            "Temperature",
+            type="default",
+            placeholder="Значения от 0 до 2",
+            disabled=False,
+            label_visibility="visible",
+            #value=1,
+            help="Более высокое значение делает вывод более случайным"  # noqa: E501
+        )   
       
         st.markdown("[Описание API GigaChat](https://developers.sber.ru/docs/ru/gigachat/api/reference)")    
         
