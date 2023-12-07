@@ -36,4 +36,4 @@ def sidebar():
         st.markdown("Made by YR")
         st.markdown("---")
 
-        faq()
+       # faq()
