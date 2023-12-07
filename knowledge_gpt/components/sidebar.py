@@ -28,7 +28,15 @@ def sidebar():
         st.markdown("---")
         st.markdown("# Параметры:")
 
-        st.markdown("temperature:")
+        st.markdown("## temperature:")
+        par_temperature_input = st.text_input(
+            "temperature",
+            type="password",
+            placeholder="Значения от 0 до 2",
+            help="You can get your API key from https://platform.openai.com/account/api-keys.",  # noqa: E501
+            value=os.environ.get("OPENAI_API_KEY", None)
+            or st.session_state.get("OPENAI_API_KEY", ""),
+        )
         st.markdown(
             "Температура выборки, значения от 0 до 2. Более высокие значения, такие как 1.8,\n"
             "сделают вывод более случайным, в то время как более низкие значения, такие как 0.2,\n"
@@ -36,7 +44,7 @@ def sidebar():
             "Не рекомендуется использовать совместно с параметром top_p.\n"
         )
 
-        st.markdown("top_p:")
+        st.markdown("## top_p:")
         st.markdown(
             "Тальтернатива параметру temperature, где модель учитывает результаты токенов с\n"
             "вероятностной массой top_p. Таким образом, 0.1 означает, что учитываются только \n"
@@ -44,19 +52,19 @@ def sidebar():
             "Не рекомендуется использовать совместно с параметром temperature.\n"
         )
         
-        st.markdown("n - число вариантов ответов модели:")
+        st.markdown("## n - число вариантов ответов модели:")
         
         st.markdown(
             "Число вариантов ответов модели, которые необходимо сгенерировать \n"
             "для каждого входного сообщения. Максимально возможное значение n=4.\n"
         )
 
-        st.markdown("max_tokens:")
+        st.markdown("## max_tokens:")
         st.markdown(
             "Мальное количество токенов для генерации ответов\n"
         )
           
-        st.markdown("repetition_penalty:")
+        st.markdown("## repetition_penalty:")
         st.markdown(
             "Количество повторений слов. Значение 1.0 — ничего не менять (нейтральное значение),\n"
             "от 0 до 1 — повторять уже сказанные слова, от 1 \n"
