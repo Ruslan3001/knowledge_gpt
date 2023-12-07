@@ -27,16 +27,21 @@ def sidebar():
 
         st.markdown("---")
         st.markdown("# Параметры:")
-
-        st.markdown("## temperature:")
+        
+        # Орисание st.text_input: https://docs.streamlit.io/library/api-reference/widgets/st.text_input  
+        
+        # temperature:
         par_temperature_input = st.text_input(
             "temperature",
-            type="password",
+            max_chars=1,
+            key=int,
+            type="default",
             placeholder="Значения от 0 до 2",
-            help="You can get your API key from https://platform.openai.com/account/api-keys.",  # noqa: E501
-            value=os.environ.get("OPENAI_API_KEY", None)
-            or st.session_state.get("OPENAI_API_KEY", ""),
+            disabled=False,
+            label_visibility="visible",
+            help="Температура выборки, значения от 0 до 2. Более высокие значения, такие как 1.8,\n  jfffc \n jbh \n"  # noqa: E501
         )
+        
         st.markdown(
             "Температура выборки, значения от 0 до 2. Более высокие значения, такие как 1.8,\n"
             "сделают вывод более случайным, в то время как более низкие значения, такие как 0.2,\n"
